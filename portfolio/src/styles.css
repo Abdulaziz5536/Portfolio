@@ -1,0 +1,49 @@
+body{
+  font-family: Raleway,sans-serif;
+  background: url(https://raw.githubusercontent.com/yagoestevez/fcc-portfolio/master/src/Images/Stars.svg?sanitize=true);
+  margin:0%;
+
+  
+}
+.navigation{
+  display: flex;
+  justify-content: end;
+  gap:30px;
+  list-style: none;
+  margin-right: 300px;
+  font-size: 25px;
+  background: #fafafa url(https://raw.githubusercontent.com/yagoestevez/fcc-portfolio/master/src/Images/Author_BG.jpg) center right no-repeat;
+  height: 70px;
+  margin-top: 0%;
+  align-items: center;
+  
+}
+
+h3{
+  font-size: 70px;
+  margin-top: 200px;
+  margin-bottom: 0%;
+  margin-left: 100px;
+}
+h4{
+  margin-left: 100px;
+  font-size: 30px;
+  
+    
+}
+
+.cursor {
+  display: inline-block;
+  animation: blink 0.7s infinite;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+p{
+  margin-top: 300px;
+  margin-left: 100px;
+}
+
