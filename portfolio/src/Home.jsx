@@ -1,6 +1,8 @@
 import "./styles.css";
 import { useState, useEffect } from "react";
-import { HomeIcon, UserIcon } from '@heroicons/react/24/solid'
+import { FaHome, FaUser, FaNewspaper, FaLinkedin, FaGithub, FaInstagram } from 'react-icons/fa';
+import { WiWindy } from "react-icons/wi";
+import { IoLogoJavascript } from "react-icons/io";
 
 export default function Home(){
 
@@ -119,9 +121,9 @@ const formattedDate = `${String(today.getDate()).padStart(2, "0")}.${String(
     
       <nav className="navigation">
         
-        <li><HomeIcon/>Home</li>
-        <li><UserIcon/>About</li>
-        <li>Resume</li>
+        <li><FaHome/>Home</li>
+        <li><FaUser/>About</li>
+        <li><FaNewspaper/>Resume</li>
       
       </nav>
 
@@ -131,9 +133,31 @@ const formattedDate = `${String(today.getDate()).padStart(2, "0")}.${String(
           <span className="cursor"> </span>
           </h4>
           <h5>{paragraphText}</h5>
-          <h6 id="about-me">About Me</h6>
-        <p>Software Engineer passionate about building efficient and user-friendly solutions through code.<br/> I enjoy solving real-world problems and continuously improving my technical skills.<br/> I love developing programs using javaScript, but i am conversant with python and C.<br/> Outside of programming, I love reading, playing football, and exploring new technologies.<br/> My goal is to grow as a developer while creating impactful and meaningful software.</p>
-        <h6 id="socials">You can find me on</h6>
+          <div style={{display:"flex"}}>
+             <h6 id="about-me">About Me</h6>
+        <p id="paragraph">Software Engineer passionate about building efficient and user-friendly solutions through code.<br/> I enjoy solving real-world problems and continuously improving my technical skills.<br/> I love developing programs using javaScript, but i am conversant with python and C.<br/> Outside of programming, I love reading, playing football, and exploring new technologies.<br/> My goal is to grow as a developer while creating impactful and meaningful software.</p>
+        <h6 id="skillset">skilset</h6>
+        <ul id="skillset-ul">
+            <p id="skillset-p"><IoLogoJavascript/></p>
+         <p id="skillset-p"><IoLogoJavascript/></p>
+         
+         
+        </ul>
+        
+        
+        
+
+          </div>
+         
+        <h6 id="socials">You can find me on </h6>
+        
+        <h2 id="links">
+          <FaLinkedin/>
+          <FaGithub/> 
+          <FaInstagram/>
+
+        
+          </h2>
         
         
       </div>
@@ -141,7 +165,8 @@ const formattedDate = `${String(today.getDate()).padStart(2, "0")}.${String(
      
      <footer>
 
-      <h1>{responseTime}ms {formattedDate}</h1>
+      <h1 style={{display:"flex",justifyContent:"center"}}>{formattedDate}</h1>
+      <h1 style={{display:"flex",justifyContent:"end"}}><WiWindy/>{responseTime}ms</h1>
       
 
 

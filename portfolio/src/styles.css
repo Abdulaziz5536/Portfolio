@@ -19,10 +19,13 @@ body{
   gap:30px;
   list-style: none;
   margin-right: 300px;
-  font-size: 25px;
-  height: 70px;
-  margin-top: 0%;
+  font-size: 20px;
+  margin-top: 10px;
   align-items: center;
+  
+}
+.navigation li{
+  cursor: pointer;
   
 }
 
@@ -54,7 +57,7 @@ h5{
  width: 25%;
  height: 200px;
  display: inline-block;
- margin-left: 800px;
+ margin-left: 850px;
  margin-top: -200px;
  font-size: 0.85em;
  letter-spacing: 1.5px;
@@ -67,28 +70,62 @@ h5{
  margin-top: 200px;
  font-size: 30px;
  margin-left: 320px;
+ 
 }
-p{
-  
-  margin-left: 100px;
+#paragraph{
+  margin-top: 300px;
+  margin-left:-330px;
   width: 40%;
   font-size: 1.2em;
   line-break:strict;
+}
+#skillset{
+      color: red;
+       margin-top: 200px;
+       font-size: 30px;
+       margin-left: 400px;
+       
+}
+#skillset-ul{
+  display: flex;
+  
+  gap: 400px;
+}
+#skillset-p{
+  height: 120px;
+  width: 200px;
+  text-align: center;
+  font-size: 4.5em;
+  margin-top: 300px;
+  margin-left:-330px;
+  border: 1.7px solid rgba(200, 137, 230, .637)
+  
+  
+  
 }
 #socials{
   display: flex;
   justify-content: center;
   margin-top: 100px;
+  margin-bottom: 40px;
   
   font-size: 30px;
 }
-footer{
-  box-sizing: border-box;
-  background-color: #c6c3c1;
-  color: black;
-  padding-right: 10px;
+#links{
   display: flex;
-  justify-content: end;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  
+}
+
+footer{
+  
+  box-sizing: border-box;
+  background-color: #252525;
+  color: #c6c3c1;
+  padding-right: 10px;
+  padding-bottom: 2px;
   font-size: 0.5em;
   word-spacing: 10px;
   align-items: center;
