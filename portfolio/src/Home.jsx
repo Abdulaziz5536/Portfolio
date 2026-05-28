@@ -1,5 +1,6 @@
 import "./styles.css";
 import { useState, useEffect } from "react";
+import { HomeIcon, UserIcon } from '@heroicons/react/24/solid'
 
 export default function Home(){
 
@@ -41,6 +42,9 @@ returnNULL;
   const [text, setText] = useState("");
   const [index, setIndex] = useState(0);      
   const [isDeleting, setIsDeleting] = useState(false);
+  const [data, setData] = useState([]);
+  const [responseTime, setResponseTime] = useState(0);
+  
 
   useEffect(() => {
     const currentWord = words[index];
@@ -82,6 +86,31 @@ returnNULL;
   return () => clearInterval(interval);
 }, []);
 
+ useEffect(() => {
+    const fetchData = async () => {
+      const start = performance.now();
+
+      const response = await fetch(
+        "https://jsonplaceholder.typicode.com/posts"
+      );
+
+      const result = await response.json();
+
+      const end = performance.now();
+
+      setResponseTime((end - start).toFixed(2));
+      setData(result);
+    };
+
+    fetchData();
+  }, []);
+
+  const today = new Date();
+
+const formattedDate = `${String(today.getDate()).padStart(2, "0")}.${String(
+  today.getMonth() + 1
+).padStart(2, "0")}.${today.getFullYear()}`;
+
 
   return (
     <>
@@ -90,8 +119,8 @@ returnNULL;
     
       <nav className="navigation">
         
-        <li>Home</li>
-        <li>About</li>
+        <li><HomeIcon/>Home</li>
+        <li><UserIcon/>About</li>
         <li>Resume</li>
       
       </nav>
@@ -102,10 +131,24 @@ returnNULL;
           <span className="cursor"> </span>
           </h4>
           <h5>{paragraphText}</h5>
-        <p>Software Engineer passionate about building efficient and user-friendly solutions through code. I enjoy solving real-world problems and continuously improving my technical skills. Outside of programming, I love reading, playing football, and exploring new technologies. My goal is to grow as a developer while creating impactful and meaningful software.</p>
+          <h6 id="about-me">About Me</h6>
+        <p>Software Engineer passionate about building efficient and user-friendly solutions through code.<br/> I enjoy solving real-world problems and continuously improving my technical skills.<br/> I love developing programs using javaScript, but i am conversant with python and C.<br/> Outside of programming, I love reading, playing football, and exploring new technologies.<br/> My goal is to grow as a developer while creating impactful and meaningful software.</p>
+        <h6 id="socials">You can find me on</h6>
+        
+        
       </div>
+      
      
+     <footer>
+
+      <h1>{responseTime}ms {formattedDate}</h1>
+      
+
+
+      
+    </footer>
     </div>
+    
      
     
      </>
